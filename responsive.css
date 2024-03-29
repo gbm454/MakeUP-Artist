@@ -1,0 +1,62 @@
+/* this media query use for mobile view */
+@media screen and (max-width: 767px) {
+
+  .logo{
+    transform: scale(2);
+    border-radius: none;
+    margin-left: 1.5rem;
+  }
+
+  .header {
+    padding: 20px 0;
+  }
+
+  .logo {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+  }
+
+  .main_nav {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .main_nav ul li {
+    margin: 0 3px;
+  }
+
+  .banner {
+    background-size: 200%;
+    background-position: top center;
+    background-repeat: no-repeat;
+  }
+
+  .banner h1 {
+    font-size: 40px;
+  }
+
+  .about-section h1,
+  .portfolio-section h2 {
+    font-size: 30px;
+  }
+
+  .about-box {
+    margin: 15px 0;
+  }
+
+  #pop_pic {
+    left: 30px;
+    top: 30px;
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+  }
+
+  #pop_pic.active {
+    left: 30px;
+    top: 120px;
+    width: calc(100% - 60px);
+    height: calc(100% - 500px);
+    transition: all 0.1s ease-in-out;
+  }
+}

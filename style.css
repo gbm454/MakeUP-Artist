@@ -1,0 +1,340 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: arial;
+  background: #000;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #fff;
+}
+
+.logo1 {
+  transform: scale(0.7);
+  margin-left: -1.5rem;
+  border-radius: 10px;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 20px;
+}
+
+.main_nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.main_nav ul li {
+  display: inline-block;
+  margin: 0 0 0 20px; /* top right bottom left */
+  font-size: 16px;
+}
+
+.main_nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+}
+
+.main_nav ul li:hover a {
+  color: #f12626;
+}
+
+.banner {
+  background-color: #0021a7;
+  background-blend-mode: darken;
+  min-height: 100vh;
+  position: relative;
+  background-size: cover;
+  padding: 100px 50px 100px 0;
+}
+
+.banner h1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.banner_content {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  animation: 1s scaleAnim 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: scaleY(0); /* increase height along y axis */
+}
+
+@keyframes scaleAnim {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  } /* At the beginning of the animation (0%), the element is hidden (opacity: 0) and has zero height along the Y-axis (transform: scaleY(0)). This means the element is completely transparent and has no visible height. */
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  } /* At the end of the animation (100%), the element is fully visible (opacity: 1) and has its original height along the Y-axis (transform: scaleY(1)). This means the element is fully opaque and has its original height restored, making it visible.
+ */
+}
+
+.social_links {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 22px;
+}
+
+.social_links li a {
+  color: #fff;
+}
+
+.social_links li a:hover {
+  color: #f12626;
+}
+
+.about-section {
+  background: #010519;
+  padding: 80px 20px;
+}
+
+.about-section h2 {
+  font-size: 40px;
+  margin: 0 0 30px;
+}
+
+.bdr-btm {
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.bdr-btm:after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 3px;
+  background-color: #f12626;
+  left: 0;
+  top: 100%;
+}
+
+.bdr-btm.bdr-btm-center:after {
+  left: 50%;
+  margin-left: -25px;
+}
+
+.about-box {
+  background: #020f46;
+  padding: 30px;
+}
+
+.about-box ul {
+  padding-left: 15px;
+}
+
+.about-box ul li {
+  margin-bottom: 20px;
+}
+
+.about-box h3 {
+  margin-bottom: 20px;
+}
+
+.btn1 {
+  border: 0;
+  display: inline-block;
+  color: #fff;
+  background-color: #020f46;
+  padding: 11px 25px;
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  line-height: 20px;
+  min-height: 42px;
+  outline: none;
+  width: auto;
+  border-radius: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* portfolio-section */
+.portfolio-section {
+  padding: 80px 0;
+  background: #000;
+}
+
+.portfolio-section h2 {
+  font-size: 40;
+  margin-bottom: 30px;
+}
+
+.portfolio-box {
+  padding-bottom: 70%;
+  background-size: cover;
+  background-position: center center;
+  margin: 30px 15px 30px;
+  transition: all 0.3s ease-out;
+  background-blend-mode: darken;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.portfolio-box:hover {
+  background-color: #0021a7;
+}
+
+.portfolio-box h3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  transition: all 0.3s ease-out;
+  transform: scale(5);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.portfolio-box:hover h3 {
+  transform: scale(1);
+  opacity: 1;
+}
+
+#pop_pic_bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+#pop_pic_bg.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#pop_pic {
+  position: fixed;
+  left: 250px;
+  top: 100px;
+  width: calc(100% - 500px);
+  height: calc(100% - 200px);
+  z-index: 1000;
+  background-size: cover;
+  background-position: center;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+}
+
+#pop_pic.active {
+  transform: scale(1);
+}
+
+.contact-section {
+  background: #010519;
+}
+
+.contact-section-left {
+  padding: 40px 0;
+}
+
+.contact-box {
+  padding: 0 50px;
+  margin-bottom: 30px;
+}
+
+.contact-box:last-child {
+  margin-bottom: 0;
+}
+
+.contact-box h3 {
+  margin-bottom: 15px;
+}
+
+.contact-box a {
+  color: #fff;
+}
+
+.contact-box i.fa {
+  font-size: 30px;
+  display: block;
+  padding: 0 0 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #fff;
+}
+
+.contact-section-right {
+  background-color: #020f46;
+  padding: 40px 0;
+}
+
+.contact-section-right h2 {
+  margin-bottom: 30px;
+}
+
+input:not([type="submit"]),
+textarea {
+  border: 1px solid gray;
+  color: #222;
+  padding: 10px 16px;
+  margin: 0 0 15px;
+  font-size: 14px;
+  line-height: 22px;
+  background-color: #fff;
+  height: 42px;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 80px;
+}
+
+input[type="submit"] {
+  border: 0;
+  display: inline-block;
+  color: #fff;
+  background-color: #010519;
+  padding: 11px 25px;
+  margin: 0 0 15px 0;
+  font-size: 14px;
+  line-height: 20px;
+  min-height: 42px;
+  outline: 0;
+  width: auto;
+  border-radius: 4px;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+}
